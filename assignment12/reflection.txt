@@ -1,0 +1,6 @@
+1. Static charts just show the data as a picture. 
+   Interactive charts, like with Plotly and Dash, let you click, hover, and choose options to explore the data.
+2. Dashboards let you explore data in real time. You can filter and interact with charts to see patterns and changes quickly,
+   without making new graphs each time.
+3. Plotly and Dash help people understand data better. You can click, filter, and explore charts,
+   so it's easier to see patterns and explain results to other.
