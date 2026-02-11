@@ -26,3 +26,26 @@ df['cumulative'] = df.apply(cumulative, axis=1)
 #Plot cumulative revenue vs order_id
 df.plot(x = "order_id", y = "cumulative", kind="line", title = "Cumulative Revenue Over Orders")
 plt.show()
+
+
+#Task 3: Interactive Visualizations with Plotly
+import plotly.express as px
+import plotly.data as pldata
+
+#Load the wind dataset
+df1 = pldata.wind(return_type='pandas')
+
+#Show first and last 10 rows
+print(df1.head(10))
+print(df1.tail(10))
+
+#Clean 'strength' column
+df1["strength"] = df1["strength"].str.replace(r'[^0-9.]', '', regex=True)
+df1["strength"] = df1["strength"].astype(float)
+
+#Create interactive scatter plot
+fig = px.scatter(df1, x = "strength", y = "frequency", color = "direction", title = "Wind Strength vs Requency by Direction", hover_data = ["frequency"])
+
+#Save plot as HTML and open it in browser
+fig.write_html("wind.html", auto_open=True)
+
